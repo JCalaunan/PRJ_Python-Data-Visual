@@ -19,18 +19,40 @@ Part two of the project, shows the usefulness of visuals for use in presentation
 - pip install pandas
 - pip install seaborn
 
-## Global Functions
-def sqrt_trans(x, inverse = False):
-    if not inverse:
-        return np.sqrt(x)
-    else:
-        return x ** 2
+## Global 
+### Functions
+#### FUNCTION TO PLOT VALS ALONG X-AXIS, NOMINAL VALS ON Y
+def yplot_values(gx, form):
+    initialx = 0
+	
+    # Logic to print the proportion text on the bars
+    for g in gx.patches:
+        gx.text(g.get_width(), initialx + g.get_height()/4,
+                form.format(g.get_width()),
+                color='black',
+                ha="left") 
+        initialx+=1
 
-def log_trans(x, inverse = False):
-    if not inverse:
-        return np.log(x)
-    else:
-        return np.exp(x)
+#### FUNCTION TO PLOT VALS ALONG Y-AXIS, NOMINAL VALS ON X
+def xplot_values(gy, form):
+    initialy = 0
+    
+    # Logic to print the proportion text on the bars
+    for g in gy.patches:
+        gy.text(initialy + g.get_width()/13, g.get_height(), 
+        form.format(g.get_height()), 
+        color='black',
+        ha='center', # 'center', 'right', 'left'
+        va='bottom') # 'top', 'bottom', 'center', 'baseline', 'center_baseline'
+        initialy+=1
+		
+### Variables
+ticks_Borrow_low = np.arange(0, loans_df.BorrowerRate.max()+0.02, 0.02)
+ticks_Borrow_high = np.arange(0, loans_df.BorrowerRate.max()+0.05, 0.05)
+ticks_range_MLP = np.arange(0, loans_df.MonthlyLoanPayment.max()+200, 200)
+
+.set(xticks = xticks_range_MLP)
+g1.set(xticks = xticks_range_Borrow)
 
 ## Methodology:
 1. Gather data
@@ -152,6 +174,9 @@ BorrowerState
 - [Set transparency on boxplot](https://github.com/mwaskom/seaborn/issues/979)
 - [Seaborn major grid lines](https://stackoverflow.com/questions/33541085/control-gridline-spacing-in-seaborn)
 - [Seaborn change palette to specific explicit colors](https://cmdlinetips.com/2019/04/how-to-specify-colors-to-scatter-plots-in-python/)
+- [Rotate xticks on x-axis](https://github.com/mwaskom/seaborn/issues/1853)
+- [Joint plot axis changer](https://stackoverflow.com/questions/34209140/setting-the-axes-tick-values-of-a-seaborn-jointplot)
+- [Multiple if conditions](https://stackoverflow.com/questions/48872234/using-apply-in-pandas-lambda-functions-with-multiple-if-statements)
 
 ## To do:
 1. Function to download files:
