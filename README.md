@@ -177,6 +177,7 @@ BorrowerState
 - [Rotate xticks on x-axis](https://github.com/mwaskom/seaborn/issues/1853)
 - [Joint plot axis changer](https://stackoverflow.com/questions/34209140/setting-the-axes-tick-values-of-a-seaborn-jointplot)
 - [Multiple if conditions](https://stackoverflow.com/questions/48872234/using-apply-in-pandas-lambda-functions-with-multiple-if-statements)
+- [Seaborn colormap](https://stackoverflow.com/questions/62884183/trying-to-add-a-colorbar-to-a-seaborn-scatterplot)
 
 ## To do:
 1. Function to download files:
