@@ -1,0 +1,15 @@
+Update content to review comment #2.
+Consistent naming. Update part 2 slides.
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   Loans Part 1.html
+#	modified:   Loans Part 1.ipynb
+#	new file:   Loans Part 2.ipynb
+#	renamed:    LoansPart2.slides.html -> Loans Part 2.slides.html
+#	deleted:    LoansPart2_slides.ipynb
+#
